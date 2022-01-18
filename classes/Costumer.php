@@ -6,11 +6,13 @@ class Costumer{
   private $nick;
   private $email;
   private $password;
+  protected $discount = 0;
 
-  function __construct($_email, $_password)
+  function __construct($_email, $_password, $_nick)
   {
     $this->email = $_email;
     $this->password = $_password;
+    $this->nick = $_nick;
   }
 
   public function setName($_name){
@@ -29,7 +31,7 @@ class Costumer{
     return $this->surname;
   }
 
-  public function setNick($_id){
+  public function setNick(){
     return $this->nick;
   }
 
@@ -55,5 +57,13 @@ class Costumer{
 
   public function getPassword(){
     return $this->password;
+  }
+
+  public function setDiscount($_discount){
+    $this->discount = $_discount;
+  }
+
+  public function getDiscount(){
+    return $this->discount;
   }
 };
